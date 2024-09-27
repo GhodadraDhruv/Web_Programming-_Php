@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Count Vowels</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-
-<h2>Enter a Sentence</h2>
-<form method="post">
-    Sentence: <input type="text" name="sentence" required><br><br>
-    <input type="submit" value="Count Vowels">
-</form>
-
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $sentence = $_POST['sentence'];
-    $sentence = strtolower($sentence);
-    $vowels = ['a', 'e', 'i', 'o', 'u'];
-    $vowelCount = 0;
-    for ($i = 0; $i < strlen($sentence); $i++) {
-        if (in_array($sentence[$i], $vowels)) {
-            $vowelCount++; 
-        }
-    }
-    echo "<h3>The number of vowels in the sentence is: " . $vowelCount . "</h3>";
-}
-?>
-
+<form action="">
+        <label for="s">Enter a sentenace:</label>
+        <input type="text" id="s" name="s"><br>
+        <input type="submit" value="submit" name="submit">
+    </form>
 </body>
 </html>
+<?php
+    //count vowels in a string
+
+    if(isset($_GET['submit'])){
+        $count = 0;
+        $s = $_GET['s'];
+        $s =  strtoupper($s);
+        for($i=0;$i<strlen($s);$i++){
+            if($s[$i] == "A" || $s[$i] == "E" || $s[$i] == "I" || $s[$i] == "O" ||  $s[$i] == "U"){
+                $count++;
+            }
+        }
+        echo "<br>Number of vowels in \"" . $_GET['s'] . "\" : $count";
+    }
+?>
