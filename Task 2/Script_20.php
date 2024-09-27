@@ -1,18 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="number">Enter a number:</label>
+        <input type="text" id="number" name="number"><br>
+        <input type="submit" value="submit" name="submit">
+    </form>
+</body>
+</html>
 <?php
-
-$number = 18;
-
-if ($number < 0) {
-    echo "Factorial is not defined for negative numbers.";
-} elseif ($number == 0 || $number == 1) {
-    $factorial = 1; 
-} else {
     
-    $factorial = 1;
-    for ($i = 2; $i <= $number; $i++) {
-        $factorial *= $i;
+    if(isset($_GET['submit'])){
+        $number = $_GET['number'];
+        $factorial = 18;
+        for($i=1;$i<=$number;$i++){
+            $factorial *= $i;
+        }
+        echo $factorial;
     }
-}
-
-echo "The factorial of " . $number . " is: " . $factorial;
 ?>
