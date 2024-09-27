@@ -1,13 +1,8 @@
 <?php
+    $width = 18;
+    $length = 18;
 
-function calculate($length, $width)
-{
-    return $length * $width;
-}
+    $area = $width * $length;
 
-
-$length = 18; 
-$width = 18;   
-
-$area = calculate($length, $width);
-echo "The area of the rectangle is: " . $area;
+    echo $area;
+?>
