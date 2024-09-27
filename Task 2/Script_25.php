@@ -1,14 +1,15 @@
 <?php
+    $num1 = 18;
+    $num2 = 7;
 
-$a = 10;
-$b = 20;
+    
+    echo "Old number 1 : $num1";
+    echo "<br>Old number 2 : $num2";
 
-echo "Before swapping: a = " . $a . ", b = " . $b . "<br>";
+    $num1 = $num1 * $num2;
+    $num2 = $num1 / $num2;
+    $num1 = $num1 / $num2;
 
-$a = $a + $b;
-$b = $a - $b;
-$a = $a - $b;
-
-echo "After swapping: a = " . $a . ", b = " . $b;
-
+    echo "<br>New number 1 : $num1";
+    echo "<br>New number 2 : $num2";
 ?>
