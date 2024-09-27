@@ -1,12 +1,8 @@
 <?php
-
-function isEvenOdd($number)
-{
-    return ($number % 2 === 0) ? 'even' : 'odd';
-}
-
-
-$number = 18; 
-
-$result = isEvenOdd($number);
-echo "The number " . $number . " is " . $result . ".";
+    $number = 18;
+    if($number % 2 == 0){
+        echo "Even number";
+    }else{
+        echo "Odd number";
+    }
+?>
