@@ -1,33 +1,32 @@
-<html>
+<?php
+    
+    $random = rand(1,10);
+?>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Guess the Number</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-
-<h2>Guess the Number</h2>
-<form method="post">
-    Enter your guess (1 to 10): <input type="number" name="guess" min="1" max="10" required><br><br>
-    <input type="submit" value="Submit Guess">
-</form>
-
-<?php
-session_start();
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    $guess = intval($_POST['guess']);
-    if (!isset($_SESSION['random_number'])) {
-        $_SESSION['random_number'] = rand(1, 10);
-    }
-    $randomNumber = $_SESSION['random_number'];
-    if ($guess == $randomNumber) {
-        echo "<h3>Congratulations! You guessed the correct number: " . $randomNumber . ".</h3>";
-        unset($_SESSION['random_number']);
-    } else {
-        echo "<h3>Sorry, the correct number was " . $randomNumber . ". Please try again!</h3>";
-    }
-}
-?>
-
+    <form action="">
+        <label for="number">Guess a number(1-10):</label>
+        <input type="text" id="number" name="number"><br>
+        <input type="submit" value="submit" name="submit">
+    </form>
 </body>
 </html>
+<?php
+
+    if(isset($_GET['submit'])){
+        $number = $_GET['number'];
+
+        if($number == $random){
+            echo "<script>alert('You guessed it right 😊');</script>";
+        }else{
+            echo "<script>alert('You guessed it wrong 🥹');</script>";
+        }
+    }
+
+?>
