@@ -10,7 +10,7 @@
        $result = mysqli_query($connect,$query);
 
        if($result == 1){
-           echo "";
+           echo "<script>alert('Inserted');</script>";
        }else{
         echo "<script>alert('Not Inserted');</script>";
        }
@@ -22,7 +22,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Data Display</title>
+    <title>Student Data </title>
     <style>
         
         * {
@@ -112,7 +112,7 @@
                     <th>Name</th>
                     <th>Age</th>
                     <th>Course</th>
-                </tr>
+                </tr>  
             </thead>
             <tbody>
                 <?php
@@ -144,15 +144,15 @@
 
         
         <div class="form-container">
-            <h2>Add New Student</h2>
+            <h2>Add Student</h2>
             <form id="studentForm" method="post">
-                <label for="name">Name:</label>
+                <label for="name">Enter Name:</label>
                 <input type="text" id="name" name="name" required>
                 
-                <label for="age">Age:</label>
+                <label for="age">Enter Age:</label>
                 <input type="number" id="age" name="age" required>
                 
-                <label for="course">Course:</label>
+                <label for="course">Enter Course:</label>
                 <input type="text" id="course" name="course" required>
                 
                 <button type="submit" name="submit">Add Student</button>
